@@ -16,7 +16,9 @@ document.getElementById('noakhali-donate-btn').addEventListener('click',function
             p.innerHTML=`<h1 class="text-3xl font-semibold">${noakhaliInputMoney} TK. is Donate for Flood at Noakhali, Bangladesh</h1>
             <p class="text-xl">Date: ${todayDate}</p>
             `;
-            document.getElementById('transaction-history').appendChild(p)
+            document.getElementById('transaction-history').appendChild(p);
+            modal.showModal();
+            document.getElementById('noakhali-donate-money').value = '';
                 }
         else{
             alert('not enough money')
@@ -41,7 +43,9 @@ document.getElementById('feni-donate-btn').addEventListener('click',function(){
             p.innerHTML=`<h1 class="text-3xl font-semibold">${feniInputMoney} TK. is Donate for Flood Relief in Feni,Bangladesh</h1>
             <p class="text-xl">Date: ${todayDate}</p>
             `;
-            document.getElementById('transaction-history').appendChild(p)
+            document.getElementById('transaction-history').appendChild(p);
+            modal.showModal();
+            document.getElementById('feni-donate-money').value = '';
                 }
         else{
             alert('not enough money')
@@ -67,7 +71,8 @@ document.getElementById('quota-donate-btn').addEventListener('click',function(){
             <p class="text-xl">Date: ${todayDate}</p>
             `;
             document.getElementById('transaction-history').appendChild(p);
-            
+            modal.showModal();
+            document.getElementById('quota-donate-money').value = '';
         }
         else{
             alert('not enough money')
