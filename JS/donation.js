@@ -1,55 +1,76 @@
 document.getElementById('noakhali-donate-btn').addEventListener('click',function(){
-    const noakhaliDonateMoney = getInputFieldValueById('noakhali-donate-money');
-    const noakhaliRcvBalance= getTextFieldValueById('noakhali-rcv-balance');
-    noakhaliReceived = noakhaliDonateMoney+noakhaliRcvBalance;
-    console.log(noakhaliReceived);
-    document.getElementById('noakhali-rcv-balance').innerText=noakhaliReceived;
-    const p = document.createElement('p');
-    p.innerText=`Donate Money ${noakhaliDonateMoney} TK `;
-    console.log('Money rcv',p);
-    let myBalance = getTextFieldValueById('my-balance');
-    if(myBalance < noakhaliDonateMoney){
-        alert('Taka nai');
-        return;
+    const noakhaliInputMoney = getInputFieldValueById('noakhali-donate-money');
+    const noakhaliRcvBalance = getTextFieldValueById('noakhali-rcv-balance');
+    const myBalance = getTextFieldValueById('my-balance');
+    const noakhaliReceived = noakhaliInputMoney + noakhaliRcvBalance;
+    console.log(noakhaliReceived,noakhaliRcvBalance,myBalance);
+    if(noakhaliInputMoney<=0 || isNaN(noakhaliInputMoney)===true){
+        alert('invalid');
     }
     else{
-        myBalance=myBalance-noakhaliDonateMoney;
-        document.getElementById('my-balance').innerText=myBalance;
-        console.log(myBalance);
-        document.getElementById('transaction-history').appendChild(p);
+        if(myBalance >= noakhaliInputMoney){
+            const newMyBalance = myBalance - noakhaliInputMoney;
+            document.getElementById('my-balance').innerText=newMyBalance;
+            document.getElementById('noakhali-rcv-balance').innerText=noakhaliReceived;
+            const p = document.createElement('p');
+            p.innerHTML=`<h1 class="text-3xl font-semibold">${noakhaliInputMoney} TK. is Donate for Flood at Noakhali, Bangladesh</h1>
+            <p class="text-xl">Date: ${todayDate}</p>
+            `;
+            document.getElementById('transaction-history').appendChild(p)
+                }
+        else{
+            alert('not enough money')
+        }
     }
 }); 
 document.getElementById('feni-donate-btn').addEventListener('click',function(){
-    const feniDonateMoney = getInputFieldValueById('feni-donate-money');
-    const feniRcvBalance= getTextFieldValueById('feni-rcv-balance');
-    feniReceived = feniDonateMoney+feniRcvBalance;
-    console.log(feniReceived);
-    document.getElementById('feni-rcv-balance').innerText=feniReceived;
-    let myBalance = getTextFieldValueById('my-balance');
-    if(myBalance<feniDonateMoney){
-        alert('Taka nai');
-        return;
+    const feniInputMoney = getInputFieldValueById('feni-donate-money');
+    const feniRcvBalance = getTextFieldValueById('feni-rcv-balance');
+    const myBalance = getTextFieldValueById('my-balance');
+    const feniReceived = feniInputMoney + feniRcvBalance;
+    console.log(feniReceived,feniRcvBalance,myBalance);
+    if(feniInputMoney<=0 || isNaN(feniInputMoney)===true){
+        alert('invalid');
     }
     else{
-        myBalance=myBalance-feniDonateMoney;
-        document.getElementById('my-balance').innerText=myBalance;
-        console.log(myBalance);
+        if(myBalance >= feniInputMoney){
+            const newMyBalance = myBalance - feniInputMoney;
+            document.getElementById('my-balance').innerText=newMyBalance;
+            document.getElementById('feni-rcv-balance').innerText=feniReceived;
+            const p = document.createElement('p');
+            p.innerHTML=`<h1 class="text-3xl font-semibold">${feniInputMoney} TK. is Donate for Flood Relief in Feni,Bangladesh</h1>
+            <p class="text-xl">Date: ${todayDate}</p>
+            `;
+            document.getElementById('transaction-history').appendChild(p)
+                }
+        else{
+            alert('not enough money')
+        }
     }
-});
+}); 
 document.getElementById('quota-donate-btn').addEventListener('click',function(){
-    const quotaDonateMoney = getInputFieldValueById('quota-donate-money');
-    const quotaRcvBalance= getTextFieldValueById('quota-rcv-balance');
-    quotaReceived = quotaDonateMoney+quotaRcvBalance;
-    console.log(quotaReceived);
-    document.getElementById('quota-rcv-balance').innerText=quotaReceived;
-    let myBalance = getTextFieldValueById('my-balance');
-    if(myBalance<quotaDonateMoney){
-        alert('Taka nai');
-        return;
+    const quotaInputMoney = getInputFieldValueById('quota-donate-money');
+    const quotaRcvBalance = getTextFieldValueById('quota-rcv-balance');
+    const myBalance = getTextFieldValueById('my-balance');
+    const quotaReceived = quotaInputMoney + quotaRcvBalance;
+    console.log(quotaReceived,quotaRcvBalance,myBalance);
+    if(quotaInputMoney<=0 || isNaN(quotaInputMoney)===true){
+        alert('invalid');
     }
     else{
-        myBalance=myBalance-quotaDonateMoney;
-        document.getElementById('my-balance').innerText=myBalance;
-        console.log(myBalance);
+        if(myBalance >= quotaInputMoney){
+            const newMyBalance = myBalance - quotaInputMoney;
+            document.getElementById('my-balance').innerText=newMyBalance;
+            document.getElementById('quota-rcv-balance').innerText=quotaReceived;
+            const p = document.createElement('p');
+            p.innerHTML=`<h1 class="text-3xl font-semibold">${quotaInputMoney} TK. is Aid for Injured in the Quota Movement</h1>
+            <p class="text-xl">Date: ${todayDate}</p>
+            `;
+            document.getElementById('transaction-history').appendChild(p);
+            
+        }
+        else{
+            alert('not enough money')
+        }
     }
-});
+}); 
