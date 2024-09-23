@@ -6,9 +6,15 @@
     <title>Assignment-5</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        header.sticky {
+            background-color: rgba(255, 2555, 255, .4);
+            backdrop-filter: blur(10px);
+        }
+    </style>
 </head>
 <body class="container mx-auto">
-    <header class="sticky top-0 z-50 ">
+    <header class="sticky top-0 z-50">
             <div >
                 <div class="navbar bg-base-100 lg:px-32 bg-[#F9F7F3] pt-6 pb-16">
                     <div class="navbar-start">
@@ -27,9 +33,9 @@
                     </div>
                   </div>
             </div>
-            <div class="flex justify-center mt-5 gap-4">
-                <button id="donation" class="btn bg-[#B4F461] text-xl font-medium px-8">Donation</button>
-                <button id="transaction" class="btn bg-[#B4F461] text-xl font-medium px-8">History</button>
+            <div class="flex justify-center py-4 gap-4 ">
+                <button id="donation" class="btn text-xl bg-[#B4F461]  font-medium px-8">Donation</button>
+                <button id="transaction" class="btn text-xl font-medium px-8">History</button>
             </div>
     </header>
     <main>
