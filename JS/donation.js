@@ -14,7 +14,7 @@ document.getElementById('noakhali-donate-btn').addEventListener('click', functio
             document.getElementById('my-balance').innerText = newMyBalance;
             document.getElementById('noakhali-rcv-balance').innerText = noakhaliReceived;
             const p = document.createElement('p');
-            p.innerHTML = `<div class="border rounded-lg mx-16 my-2 p-6">
+            p.innerHTML = `<div class="border rounded-lg mx-4 lg:mx-16 my-2 p-6">
                 <h1 class="text-3xl font-semibold">${noakhaliInputMoney} TK. is Donate for Flood at Noakhali, Bangladesh</h1>
                         <p class="text-xl">Date: ${todayDate}</p>
             </div>`;
